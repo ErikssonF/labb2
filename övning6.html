@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vue - Introduktion</title>
+  </head>
+  <body>
+    <div id="root">
+      <input id="input" type="text" v-model="newName" />
+
+      <button v-if="newName.length > 0" v-on:click="addName">
+        Lägg till ett namn
+      </button>
+
+      <button v-on:click="getName">skriv namn</button>
+
+      <ul>
+        <li v-for="name in names" v-text="name"></li>
+      </ul>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+      var app = new Vue({
+        el: "#root",
+        data: {
+          newName: "",
+          names: ["Jerry", "Lisa", "Kalle"],
+        },
+
+        methods: {
+          addName() {
+            this.names.push(this.newName);
+          },
+          getName() {
+            let randName = Math.floor(Math.random() * this.names.length);
+            let randomName = this.names[randName];
+
+            console.log(randomName);
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
