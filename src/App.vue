@@ -12,6 +12,13 @@
     </li>
   </ul>
 
+  <br>
+
+  <input ref="input" type="text" v-model="userInputRemove" />
+  <button v-on:click="removeTask">
+    Ta bort
+  </button>
+
 </template>
 
 <script setup>
@@ -20,12 +27,16 @@ import { reactive } from 'vue'
 import MyButton from './components/MyButton.vue'
 
 const userInput = ref();
+const userInputRemove = ref();
 
 const tasks = ref([]);
-
 
 const addTask = () => {
   tasks.value.push(userInput.value);
 };
+
+const removeTask = () => {
+  tasks.value.splice(userInputRemove.value, 1);
+}
 
 </script>
