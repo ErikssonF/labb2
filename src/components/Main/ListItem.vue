@@ -12,6 +12,6 @@
 </template>
 
 <script setup>
-defineProps(["text", "index"])
+defineProps(["text", "index"]);
 
 </script>
