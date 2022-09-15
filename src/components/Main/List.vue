@@ -1,46 +1,58 @@
 <template>
 
-    <input ref="input" id="input" type="text" v-model="userInput" />
+    <main>
+        <input ref="input" id="input" type="text" v-model="userInput" />
 
-    <button v-on:click="addTask">
-        Lägg till
-    </button>
+        <button v-on:click="addTask">
+            Lägg till
+        </button>
 
-    <br>
+        <br>
 
-    <input ref="input" type="text" v-model="userInputRemove" />
-    <button v-on:click="removeTask">
-        Ta bort
-    </button>
-
-    <ul>
-        <li v-for="(value, index) in tasks">
-            {{index}} {{ value }}
-        </li>
-    </ul>
+        <ul>
+            <ListItem @deleteItem="removeTask" v-for="(value, index) in tasks" :text="value" :index="index" />
+        </ul>
+    </main>
 
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { onMounted, ref } from 'vue';
+import ListItem from '@/components/Main/ListItem.vue';
 
 const tasks = ref([]);
 
 const userInput = ref();
-const userInputRemove = ref();
 
 const addTask = () => {
     tasks.value.push(userInput.value);
-    localStorage.setItem(userInput.value, userInput.value)
+    localStorage.setItem('list', JSON.stringify(tasks.value));
 
 };
 
-const removeTask = () => {
+const removeTask = (index) => {
 
-    for (var i = 0; i < localStorage.length; i++) {
-        console.log(localStorage.getItem(localStorage.key(i)));
-    }
-    // tasks.value.splice(userInputRemove.value, 1);
+    tasks.value.splice(index, 1);
+    localStorage.setItem('list', JSON.stringify(tasks.value));
 }
 
+onMounted(() => {
+    const jsonString = localStorage.getItem('list');
+
+    if (jsonString) {
+
+        tasks.value = JSON.parse(jsonString);
+    }
+
+});
+
 </script>
+
+<style scoped>
+main {
+    background-color: gray;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+</style>
