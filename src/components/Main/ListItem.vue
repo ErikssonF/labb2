@@ -15,3 +15,9 @@
 defineProps(["text", "index"]);
 
 </script>
+
+<style scoped>
+li {
+    border: 1px solid black;
+}
+</style>

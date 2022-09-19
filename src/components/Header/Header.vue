@@ -7,6 +7,7 @@
 
 <style scoped>
 main {
+    text-align: center;
     background-color: bisque;
 }
 </style>

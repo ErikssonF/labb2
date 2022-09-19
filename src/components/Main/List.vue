@@ -50,7 +50,7 @@ onMounted(() => {
 
 <style scoped>
 main {
-    background-color: gray;
+    background-color: burlywood;
     display: flex;
     flex-direction: column;
     align-items: center;
