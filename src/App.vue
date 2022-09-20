@@ -19,7 +19,5 @@ main {
   flex-direction: column;
   background-color: #606C38;
   min-height: 90vh;
-  width: 40vw;
-
 }
 </style>
