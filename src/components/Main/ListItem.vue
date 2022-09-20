@@ -19,7 +19,6 @@ defineProps(["text", "index"]);
 li {
     display: flex;
     justify-content: space-between;
-    border-top: 1px 1px 1px 1px solid black;
 
 }
 </style>

@@ -15,6 +15,8 @@ main {
     text-align: center;
     background-color: #283618;
     width: 40vw;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
 }
 
 h1 {
