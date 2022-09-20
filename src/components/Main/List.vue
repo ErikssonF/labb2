@@ -25,9 +25,13 @@ const tasks = ref([]);
 const userInput = ref();
 
 const addTask = () => {
-    tasks.value.push(userInput.value);
-    localStorage.setItem('list', JSON.stringify(tasks.value));
 
+    if (userInput.value.length > 0) {
+        tasks.value.push(userInput.value);
+        localStorage.setItem('list', JSON.stringify(tasks.value));
+    } else {
+        alert('Empty fields not allowed');
+    }
 };
 
 const removeTask = (index) => {
@@ -50,9 +54,15 @@ onMounted(() => {
 
 <style scoped>
 main {
-    background-color: burlywood;
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+    margin: 0px;
+    padding: 0px;
 }
 </style>

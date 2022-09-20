@@ -1,7 +1,7 @@
 <template>
 
     <main>
-        <h1>To-Do List</h1>
+        <h1>Footer</h1>
     </main>
 </template>
 
@@ -15,6 +15,8 @@ main {
     text-align: center;
     background-color: #283618;
     width: 40vw;
+    position: absolute;
+    bottom: 0;
 }
 
 h1 {

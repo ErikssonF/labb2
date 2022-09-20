@@ -1,5 +1,8 @@
 #wrapper {
-  background-color: lemonchiffon;
   display: flex;
   justify-content: center;
+}
+
+html {
+  background-color: #fefae0;
 }

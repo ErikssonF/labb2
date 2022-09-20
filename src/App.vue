@@ -17,8 +17,8 @@ main {
   align-items: center;
   display: flex;
   flex-direction: column;
-  background-color: lemonchiffon;
-  min-height: 100vh;
+  background-color: #606C38;
+  min-height: 90vh;
   width: 40vw;
 
 }

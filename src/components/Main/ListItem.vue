@@ -3,7 +3,6 @@
     <li>
         {{ text }}
 
-        <br>
         <button @click="$emit('deleteItem', index)">
             Ta bort
         </button>
@@ -18,6 +17,9 @@ defineProps(["text", "index"]);
 
 <style scoped>
 li {
-    border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px 1px 1px 1px solid black;
+
 }
 </style>
