@@ -1,14 +1,17 @@
 <template>
 
   <main>
-
+    <RouterView />
+    <div id="app"></div>
+    <h1>
+      tjena
+    </h1>
   </main>
 
 </template>
 
 <script setup>
 import Main from '@/components/Main/Main.vue';
-
 
 </script>
 
