@@ -14,7 +14,7 @@ body {
 main {
     text-align: center;
     background-color: #283618;
-    width: 40vw;
+    width: 100%;
     position: absolute;
     bottom: 0;
 }

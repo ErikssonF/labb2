@@ -66,7 +66,8 @@ ul {
     flex-direction: column;
     margin: 0px;
     padding: 0px;
-    border-top: 5px solid black;
+    border-top: 2px solid black;
+    width: 30vw;
 }
 
 input {
@@ -80,8 +81,7 @@ input {
 }
 
 button {
-    background-color: #fb6107;
-    /* Green */
+    background-color: #833000;
     border: none;
     color: white;
     padding: 5px 8px;
@@ -93,9 +93,7 @@ button {
 }
 
 ::placeholder {
-    /* Chrome, Firefox, Opera, Safari 10.1+ */
     color: black;
     opacity: 0.8;
-    /* Firefox */
 }
 </style>
