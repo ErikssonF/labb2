@@ -20,4 +20,8 @@ main {
   background-color: #606C38;
   min-height: 90vh;
 }
+
+p {
+  text-align: center;
+}
 </style>
