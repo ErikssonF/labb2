@@ -13,8 +13,8 @@ body {
 
 main {
     text-align: center;
-    background-color: #283618;
-    width: 40vw;
+    background-color: #859d43;
+    width: 60vw;
     border-top-left-radius: 25px;
     border-top-right-radius: 25px;
 }

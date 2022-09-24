@@ -11,11 +11,13 @@
 
         <section id="listSection">
             <ul>
-                <ListItem @deleteItem="removeTask" v-for="(value, index) in tasksLeft" :text="value" :index="index" />
+                <ListItem @deleteItem="removeTaskLeft" v-for="(value, index) in tasksLeft" :text="value"
+                    :index="index" />
             </ul>
 
             <ul>
-                <ListItem @deleteItem="removeTask" v-for="(value, index) in tasksRight" :text="value" :index="index" />
+                <ListItem @deleteItem="removeTaskRight" v-for="(value, index) in tasksRight" :text="value"
+                    :index="index" />
             </ul>
 
         </section>
@@ -54,10 +56,17 @@ const addTask = () => {
 }
 
 
-const removeTask = (index) => {
+const removeTaskLeft = (index) => {
 
-    tasks.value.splice(index, 1);
-    localStorage.setItem('list', JSON.stringify(tasks.value));
+    tasksLeft.value.splice(index, 1);
+    localStorage.setItem('listLeft', JSON.stringify(tasksLeft.value));
+
+}
+
+const removeTaskRight = (index) => {
+
+    tasksRight.value.splice(index, 1)
+    localStorage.setItem('listRight', JSON.stringify(tasksRight.value))
 }
 
 onMounted(() => {
@@ -80,7 +89,7 @@ onMounted(() => {
 }
 
 main {
-    width: 40vw;
+    width: 60vw;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -93,7 +102,7 @@ ul {
     margin: 0px;
     padding: 2px;
     border-top: 2px solid black;
-    width: 13vw;
+    width: 25vw;
 }
 
 input {
@@ -107,7 +116,7 @@ input {
 }
 
 button {
-    background-color: #833000;
+    background-color: #5f493d;
     border: none;
     color: white;
     padding: 5px 8px;

@@ -24,7 +24,7 @@ li {
 }
 
 button {
-    background-color: #833000;
+    background-color: #5f493d;
     border: none;
     color: white;
     padding: 5px 8px;

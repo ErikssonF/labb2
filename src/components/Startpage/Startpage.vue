@@ -1,7 +1,7 @@
 <template>
     <main class="main">
         <section class="mainText">
-            <p>What is a todo list and how can it help in business and daily life?
+            <p>What is a TO-DO list and how can it help in business and daily life?
 
                 Do any of the following seem familiar?
             </p>
@@ -19,7 +19,7 @@
                     You find it a struggle to keep to deadlines.
                 </li>
             </ul>
-            <p>
+            <p id="secondParagraph">
                 Don’t think you’re unusual because there are thousands of people who struggle with the same every day,
                 not
                 just in the workplace but in their personal life too. Luckily, there is something very simple you can do
@@ -35,6 +35,11 @@
 </template>
 
 <style scoped>
+#secondParagraph {
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
 .main {
     display: flex;
     flex-direction: column;
@@ -47,10 +52,11 @@
 ul {
     text-align: left;
     align-items: left;
+    padding-left: 25px;
 }
 
 button {
-    background-color: #833000;
+    background-color: #5f493d;
     border: none;
     color: white;
     padding: 5px 8px;
