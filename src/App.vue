@@ -18,7 +18,9 @@ main {
   display: flex;
   flex-direction: column;
   background-color: #606C38;
-  min-height: 90vh;
+  min-height: 80vh;
+  border-radius: 25px;
+  box-shadow: 0 0 10px black;
 }
 
 p {

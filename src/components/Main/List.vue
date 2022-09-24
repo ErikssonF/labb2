@@ -1,17 +1,26 @@
 <template>
 
     <main>
-        <input ref="input" id="input" type="text" v-model="userInput" placeholder="Skriv här" />
+        <input ref="input" id="input" type="text" v-model="userInput" placeholder="Enter task here" />
 
         <button v-on:click="addTask">
-            Lägg till
+            Add task
         </button>
 
         <br>
 
-        <ul>
-            <ListItem @deleteItem="removeTask" v-for="(value, index) in tasks" :text="value" :index="index" />
-        </ul>
+        <section id="listSection">
+            <ul>
+                <ListItem @deleteItem="removeTask" v-for="(value, index) in tasksLeft" :text="value" :index="index" />
+            </ul>
+
+            <ul>
+                <ListItem @deleteItem="removeTask" v-for="(value, index) in tasksRight" :text="value" :index="index" />
+            </ul>
+
+        </section>
+
+
     </main>
 
 </template>
@@ -20,19 +29,30 @@
 import { onMounted, ref } from 'vue';
 import ListItem from '@/components/Main/ListItem.vue';
 
-const tasks = ref([]);
+const tasksRight = ref([]);
+const tasksLeft = ref([]);
 
 const userInput = ref();
 
 const addTask = () => {
 
     if (userInput.value.length > 0) {
-        tasks.value.push(userInput.value);
-        localStorage.setItem('list', JSON.stringify(tasks.value));
+
+        if (tasksLeft.value.length > tasksRight.value.length) {
+
+            tasksRight.value.push(userInput.value);
+            localStorage.setItem('listRight', JSON.stringify(tasksRight.value));
+        }
+        else {
+            tasksLeft.value.push(userInput.value);
+            localStorage.setItem('listLeft', JSON.stringify(tasksLeft.value));
+        }
+
     } else {
         alert('Empty fields not allowed');
     }
-};
+}
+
 
 const removeTask = (index) => {
 
@@ -41,11 +61,13 @@ const removeTask = (index) => {
 }
 
 onMounted(() => {
-    const jsonString = localStorage.getItem('list');
+    const evenList = localStorage.getItem('listRight');
+    const oddList = localStorage.getItem('listLeft')
 
-    if (jsonString) {
+    if (evenList || oddList) {
 
-        tasks.value = JSON.parse(jsonString);
+        tasksRight.value = JSON.parse(evenList);
+        tasksLeft.value = JSON.parse(oddList);
     }
 
 });
@@ -53,6 +75,10 @@ onMounted(() => {
 </script>
 
 <style scoped>
+#listSection {
+    display: flex;
+}
+
 main {
     width: 40vw;
     display: flex;
@@ -65,9 +91,9 @@ ul {
     display: flex;
     flex-direction: column;
     margin: 0px;
-    padding: 0px;
+    padding: 2px;
     border-top: 2px solid black;
-    width: 30vw;
+    width: 13vw;
 }
 
 input {

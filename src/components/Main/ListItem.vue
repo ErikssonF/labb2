@@ -4,7 +4,7 @@
         {{ text }}
 
         <button @click="$emit('deleteItem', index)">
-            Ta bort
+            Delete
         </button>
     </li>
 
@@ -20,6 +20,7 @@ li {
     display: flex;
     justify-content: space-between;
     padding-top: 5px;
+
 }
 
 button {
@@ -27,6 +28,7 @@ button {
     border: none;
     color: white;
     padding: 5px 8px;
+    margin-bottom: 3px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
