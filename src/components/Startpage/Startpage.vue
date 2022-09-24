@@ -40,6 +40,11 @@
     margin-right: 15px;
 }
 
+.mainText {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
 .main {
     display: flex;
     flex-direction: column;
@@ -52,7 +57,7 @@
 ul {
     text-align: left;
     align-items: left;
-    padding-left: 25px;
+    padding-left: 40px;
 }
 
 button {
