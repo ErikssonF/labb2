@@ -19,7 +19,7 @@ main {
   flex-direction: column;
   background-color: #b7c576;
   min-height: 80vh;
-  min-width: 40vw;
+  width: 60vw;
   border-radius: 25px;
   box-shadow: 0 0 10px black;
 }

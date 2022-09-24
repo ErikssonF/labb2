@@ -44,7 +44,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 40vw;
+    min-width: 60vw;
     min-height: 50vh;
     text-overflow: ellipsis;
 }
