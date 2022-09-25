@@ -20,7 +20,6 @@ li {
     display: flex;
     justify-content: space-between;
     padding-top: 5px;
-
 }
 
 button {
