@@ -53,6 +53,7 @@ const addTask = () => {
     } else {
         alert('Empty fields not allowed');
     }
+    userInput.value = "";
 }
 
 
