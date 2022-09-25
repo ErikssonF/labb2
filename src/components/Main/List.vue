@@ -3,7 +3,7 @@
     <main>
         <input ref="input" id="input" type="text" v-model="userInput" placeholder="Enter task here" />
 
-        <button v-on:click="addTask">
+        <button v-on:click="addTask" id="addTaskButton">
             Add task
         </button>
 
@@ -22,8 +22,10 @@
 
         </section>
 
-
     </main>
+
+    <button @click="toggleDark" id="darkModeToggle"> Change color scheme
+    </button>
 
 </template>
 
@@ -82,15 +84,50 @@ onMounted(() => {
 
 });
 
+let toggled = true;
+
+const toggleDark = () => {
+
+    if (toggled) {
+        document.getElementById("main").style.backgroundColor = "#faedcd";
+        document.getElementById("headerMain").style.backgroundColor = "#d4a373";
+
+        toggled = false;
+
+    } else {
+        document.getElementById("main").style.backgroundColor = "#b7c576";
+        document.getElementById("headerMain").style.backgroundColor = "#859d43";
+
+        toggled = true;
+    }
+};
+
 </script>
 
 <style scoped>
+#darkModeToggle {
+    position: absolute;
+    top: 35px;
+    right: 35px;
+    background-color: #5f493d;
+    border: none;
+    color: white;
+    padding: 5px 8px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    border-radius: 8px;
+}
+
+
 #listSection {
     display: flex;
 }
 
 main {
     width: 60vw;
+    height: 60vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -116,7 +153,7 @@ input {
     text-align: center;
 }
 
-button {
+#addTaskButton {
     background-color: #5f493d;
     border: none;
     color: white;

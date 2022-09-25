@@ -1,8 +1,12 @@
 #wrapper {
   display: flex;
   justify-content: center;
+  width: 100vw;
+  height: 80vw;
+  background-color: #fefae0;
+  padding-top: 20px;
 }
 
-html {
-  background-color: #fefae0;
+body {
+  margin: 0px;
 }

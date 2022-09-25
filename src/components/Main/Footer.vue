@@ -1,6 +1,6 @@
 <template>
 
-    <main>
+    <main id="footer">
         <p>Fredrik Eriksson 2022</p>
     </main>
 </template>
@@ -11,13 +11,13 @@ body {
 
 }
 
-main {
+#footer {
     display: flex;
     text-align: center;
-    background-color: #fefae0;
     width: 100%;
     position: absolute;
     bottom: 0;
+    left: 0;
     height: 10%;
     align-items: center;
 }

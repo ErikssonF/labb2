@@ -1,6 +1,6 @@
 <template>
-    <main class="main">
-        <section class="mainText">
+    <div id="main">
+        <section id="mainText">
             <p id="firstParagraph">
                 Do any of the following seem familiar?
             </p>
@@ -32,7 +32,9 @@
         <router-link to="/list">
             <button>Get Started!</button>
         </router-link>
-    </main>
+    </div>
+
+
 </template>
 
 <style scoped>
@@ -46,7 +48,7 @@
     width: 50ch;
 }
 
-.mainText {
+#mainText {
     display: flex;
     padding-left: 10px;
     padding-right: 10px;
@@ -54,13 +56,15 @@
     align-items: center;
 }
 
-.main {
+#main {
     display: flex;
     flex-direction: column;
     align-items: center;
     min-width: 60vw;
-    min-height: 50vh;
+    min-height: 67vh;
     text-overflow: ellipsis;
+
+
 }
 
 ul {

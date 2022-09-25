@@ -1,6 +1,6 @@
 <template>
 
-  <main>
+  <main id="main">
     <RouterView />
   </main>
 
@@ -13,12 +13,12 @@ import Main from '@/components/Main/Main.vue';
 
 
 <style scoped>
-main {
+#main {
   align-items: center;
   display: flex;
   flex-direction: column;
   background-color: #b7c576;
-  min-height: 80vh;
+  min-height: 40vh;
   width: 60vw;
   border-radius: 25px;
   box-shadow: 0 0 10px black;
